@@ -5,7 +5,7 @@
     <title>Series Convergence Tests Game</title>
     <meta charset="utf-8" />
 
-    <link href="style.css" rel="stylesheet" text="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
@@ -21,8 +21,17 @@
         <button class="ans-button"></button>
         <button class="ans-button"></button>
     </div>
+    <button id="review-btn">Review all content</button>
     <p>You can type 1~4 on your keyboard too. ↓configurations</p>
     <h3>config</h3>
+
+    <div id="review-overlay">
+        <div id="review-panel">
+            <h2>Series Convergence Tests — Reference</h2>
+            <div id="review-content"></div>
+            <button id="review-close">Close</button>
+        </div>
+    </div>
     <p id="config-timer-text">10 sec</p><input id="config-timer" type="range" min="5" max="30" value="10" step="1" />
 </body>
 

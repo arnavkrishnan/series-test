@@ -1,132 +1,167 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: white;
+    color: black;
     min-height: 100vh;
 }
 
 #title {
     text-align: center;
-    color: white;
-    font-size: 2.5em;
+    color: black;
+    font-size: 2em;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .MathJax {
-    font-size: 1.5em !important;
+    font-size: 2em !important;
     display: block;
     text-align: center;
 }
 
 #problem {
-    padding: 30px;
-    min-height: 15vh;
+    padding-top: 10vh;
+    height: 20vh;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin: 20px 0;
-    font-size: 1.2em;
-    line-height: 1.6;
+    color: black;
 }
 
 #streak {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 15px;
-    font-size: 24px;
+    padding-top: 10vh;
+    font-size: 30px;
     text-align: center;
-    color: white;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    color: black;
 }
 
 #timer {
     width: 100%;
-    height: 25px;
-    margin: 20px 0;
 }
 
 div {
-    min-height: 30vh;
+    height: 30vh;
     display: flex;
     justify-content: space-around;
-    gap: 15px;
-    margin: 20px 0;
 }
 
 progress {
     border: none;
-    background: rgba(255,255,255,0.3);
-    border-radius: 10px;
+    background: none;
 }
 
 progress::-moz-progress-bar {
-    background: #4ade80;
-    border-radius: 10px;
+    background: paleturquoise;
 }
 
 progress::-webkit-progress-value {
-    background: #4ade80;
-    border-radius: 10px;
+    background: paleturquoise;
 }
 
 progress::-webkit-progress-bar {
-    background: rgba(255,255,255,0.3);
-    border-radius: 10px;
+    background: none;
 }
 
 button {
     border: none;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border-radius: 15px;
+    background: none;
+    box-shadow: 0 0 5px gray;
+    border-radius: 10px;
     width: 100%;
-    margin: 0;
-    padding: 20px;
-    font-size: 1em;
+    margin: 5px;
+    color: black;
     cursor: pointer;
-    transition: all 0.3s ease;
-    color: #333;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-button:active {
-    transform: translateY(0);
 }
 
 #config-timer {
     width: 100%;
-    margin: 10px 0;
-}
-
-h3 {
-    color: white;
-    text-align: center;
-    margin-top: 30px;
-}
-
-p {
-    color: white;
-    text-align: center;
-    margin: 10px 0;
 }
 
 .correct {
-    background: #4ade80 !important;
-    color: white;
+    background: palegreen;
 }
 
 .wrong {
-    background: #f87171 !important;
-    color: white;
+    background: lightcoral;
+}
+
+h3, p {
+    color: black;
+}
+
+#review-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 24px;
+    font-size: 16px;
+}
+
+/* Review modal */
+#review-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+#review-overlay.visible {
+    display: flex;
+}
+
+#review-panel {
+    background: white;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px gray;
+}
+
+#review-panel h2 {
+    margin-top: 0;
+    color: black;
+}
+
+#review-panel .test-block {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+#review-panel .test-block:last-child {
+    border-bottom: none;
+}
+
+#review-panel .test-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: black;
+}
+
+#review-panel .test-field {
+    margin: 6px 0;
+    font-size: 0.95em;
+    color: black;
+}
+
+#review-panel .test-field strong {
+    color: black;
+}
+
+#review-close {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 24px;
 }

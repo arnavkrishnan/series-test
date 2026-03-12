@@ -102,7 +102,32 @@ document.addEventListener('keydown', event => {
     }
 });
 
+const openReview = () => {
+    const overlay = document.getElementById("review-overlay");
+    const content = document.getElementById("review-content");
+    content.innerHTML = Object.values(TESTS).map(test => `
+        <div class="test-block">
+            <div class="test-name">${test.name}</div>
+            <div class="test-field"><strong>Criteria:</strong> ${test.criteria}</div>
+            <div class="test-field"><strong>Inconclusive when:</strong> ${test.inconclusive}</div>
+            <div class="test-field"><strong>When to use:</strong> ${test.whenToUse}</div>
+            <div class="test-field"><strong>Common errors:</strong> ${test.commonErrors}</div>
+        </div>
+    `).join("");
+    overlay.classList.add("visible");
+};
+
+const closeReview = () => {
+    document.getElementById("review-overlay").classList.remove("visible");
+};
+
 window.onload = () => {
+    document.getElementById("review-btn").addEventListener("click", openReview);
+    document.getElementById("review-close").addEventListener("click", closeReview);
+    document.getElementById("review-overlay").addEventListener("click", (e) => {
+        if (e.target.id === "review-overlay") closeReview();
+    });
+
     document.getElementById("config-timer").addEventListener('input', event => {
         let elem = document.getElementById("config-timer");
         let p = document.getElementById("config-timer-text");
