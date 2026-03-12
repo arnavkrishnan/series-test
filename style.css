@@ -1,69 +1,132 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
 .MathJax {
-    font-size: 5em !important;
+    font-size: 1.5em !important;
     display: block;
     text-align: center;
 }
 
 #problem {
-    padding-top: 10vh;
-    height: 20vh;
+    padding: 30px;
+    min-height: 15vh;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
 }
 
 #streak {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-top: 10vh;
-    font-size: 30px;
+    padding: 15px;
+    font-size: 24px;
     text-align: center;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 #timer {
     width: 100%;
+    height: 25px;
+    margin: 20px 0;
 }
 
 div {
-    height: 30vh;
+    min-height: 30vh;
     display: flex;
     justify-content: space-around;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 progress {
     border: none;
-    background: none;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
 }
 
 progress::-moz-progress-bar {
-    background: paleturquoise;
+    background: #4ade80;
+    border-radius: 10px;
 }
 
 progress::-webkit-progress-value {
-    background: paleturquoise;
+    background: #4ade80;
+    border-radius: 10px;
 }
 
 progress::-webkit-progress-bar {
-    background: none;
+    background: rgba(255,255,255,0.3);
+    border-radius: 10px;
 }
 
 button {
     border: none;
-    background: none;
-    box-shadow: 0 0 5px gray;
-    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 15px;
     width: 100%;
-    margin: 5px;
+    margin: 0;
+    padding: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0);
 }
 
 #config-timer {
     width: 100%;
+    margin: 10px 0;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
+
+p {
+    color: white;
+    text-align: center;
+    margin: 10px 0;
 }
 
 .correct {
-    background: palegreen;
+    background: #4ade80 !important;
+    color: white;
 }
 
 .wrong {
-    background: lightcoral;
+    background: #f87171 !important;
+    color: white;
 }
