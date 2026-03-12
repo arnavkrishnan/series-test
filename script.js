@@ -105,15 +105,15 @@ document.addEventListener('keydown', event => {
 const openReview = () => {
     const overlay = document.getElementById("review-overlay");
     const content = document.getElementById("review-content");
-    content.innerHTML = Object.values(TESTS).map(test => `
-        <div class="test-block">
-            <div class="test-name">${test.name}</div>
-            <div class="test-field"><strong>Criteria:</strong> ${test.criteria}</div>
-            <div class="test-field"><strong>Inconclusive when:</strong> ${test.inconclusive}</div>
-            <div class="test-field"><strong>When to use:</strong> ${test.whenToUse}</div>
-            <div class="test-field"><strong>Common errors:</strong> ${test.commonErrors}</div>
-        </div>
-    `).join("");
+    content.innerHTML = Object.values(TESTS).map(test => {
+        return '<div class="test-block">' +
+            '<p class="test-name">' + test.name + '</p>' +
+            '<p class="test-field"><strong>Criteria:</strong> ' + test.criteria + '</p>' +
+            '<p class="test-field"><strong>Inconclusive when:</strong> ' + test.inconclusive + '</p>' +
+            '<p class="test-field"><strong>When to use:</strong> ' + test.whenToUse + '</p>' +
+            '<p class="test-field"><strong>Common errors:</strong> ' + test.commonErrors + '</p>' +
+            '</div>';
+    }).join('');
     overlay.classList.add("visible");
 };
 
